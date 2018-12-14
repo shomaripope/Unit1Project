@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Users/shomaripope/projects/unit1Project/style.css">
+    <link rel="textDocument" href="/Users/shomaripope/projects/unit1Project/usa.txt">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+</head>
+<body>
+    <header><h1>Welcome to hangman</h1></header>
+
+<div class="leftMain">
+    <h2>Stats:</h2>
+
+    <div class="stats">
+    <p>Letters Chosen:</p>
+    </div>
+
+</div>
+
+<div class= main>
+<header>Here we go!</header>
+
+</div>
+
+<p id="myid"></p>
+<script>
+var times = [];
+
+ $.get('usa.txt', function(data) {
+        //var fileDom = $(data);
+
+        var lines = data.split("\n");
+        $.each(lines, function(n, elem) {
+            $('#myid').append('<div>' + elem + '</div>');
+        });
+    });
+
+
+</script>
+    <script src="app.js"></script>    
+</body>
+</html>
