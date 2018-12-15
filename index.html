@@ -7,40 +7,63 @@
     <title>Document</title>
     <link rel="stylesheet" href="/Users/shomaripope/projects/unit1Project/style.css">
     <link rel="textDocument" href="/Users/shomaripope/projects/unit1Project/usa.txt">
-    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
 </head>
 <body>
-    <header><h1>Welcome to hangman</h1></header>
-
+    <header><h1>Days of Future Present</h1></header>
+    <ul class="navigation">
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+            <li id="game"><a href="#">Click Here to Start Game</a></li>
+          </ul>
+<div>
+    <p>
+        Artificial Intelligence has found a way to affect the past and has begun a game to sustain worldly resources by making sure people don't exist, if they cant guess their ! <br>
+        Once you start, you'll have limited time to guess the answer, before you fade out of existence! Hurry, your clock is ticking...! </p>
+</div>
 <div class="leftMain">
     <h2>Stats:</h2>
 
     <div class="stats">
-    <p>Letters Chosen:</p>
+    <p id="keys">Letters to Choose:
+    <button id = "a" type="button">A</button>
+    <button id = "b" type="button">B</button>
+    <button id = "c" type="button">C</button>
+    <button id = "d" type="button">D</button>
+    <button id = "e" type="button">E</button>
+    <button id = "f" type="button">F</button>
+    <button id = "g" type="button">G</button>
+    <button id = "h" type="button">H</button>
+    <button id = "i" type="button">I</button>
+    <button id = "j" type="button">J</button>
+    <button id = "k" type="button">K</button>
+    <button id = "l" type="button">L</button>
+    <button id = "m" type="button">M</button>
+    <button id = "n" type="button">N</button>
+    <button id = "o" type="button">O</button>
+    <button id = "p" type="button">P</button>
+    <button id = "q" type="button">Q</button>
+    <button id = "r" type="button">R</button>
+    <button id = "s" type="button">S</button>
+    <button id = "t" type="button">T</button>
+    <button id = "u" type="button">U</button>
+    <button id = "v" type="button">V</button>
+    <button id = "w" type="button">W</button>
+    <button id = "x" type="button">X</button>
+    <button id = "y" type="button">Y</button>
+    <button id = "z" type="button">Z</button>
     </div>
-
+    </p>
 </div>
 
-<div class= main>
+<div class= "main">
 <header>Here we go!</header>
-
+<p>
+<image id="playerImage" src="/Users/shomaripope/projects/unit1Project/shomPope.png">
+</p>
 </div>
 
-<p id="myid"></p>
-<script>
-var times = [];
-
- $.get('usa.txt', function(data) {
-        //var fileDom = $(data);
-
-        var lines = data.split("\n");
-        $.each(lines, function(n, elem) {
-            $('#myid').append('<div>' + elem + '</div>');
-        });
-    });
-
-
-</script>
-    <script src="app.js"></script>    
+<script src="file:///Users/shomaripope/projects/unit1Project/jquery-3.3.1.js"></script>
+<script src="app.js"></script>   
 </body>
 </html>

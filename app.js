@@ -18,29 +18,12 @@ let readfile = function () {
     };
 };
 
+   
+   $(document).on("load", $("#keys").hide(),$("#playerImage").hide());
+   $("#game").on("click", function(){
+       $("#keys").show();
+       $("#playerImage").show();
+       $("#playerImage").fadeOut(120000);
+   })
 
-var allText =[];
-	var allTextLines = [];
-	var Lines = [];
-	var txtFile = new XMLHttpRequest();
-
-txtFile.open("GET", "file://Users/shomaripope/projects/unit1Project/usa.txt", true);
-allText = txtFile.responseText;
-//allTextLines = allText.split(/\r\n|\n/);
-//alert(allTextLines);
-txtFile.onreadystatechange = function()
-{
-	if (txtFile.readyState == 4)
-	{
-
-			  // Makes sure it's found the file.
-				allText = txtFile.responseText;
-				allTextLines = allText.split(/\r\n|\n/);
-
-				document.write(allText);
-			} else { //alert("Didn't work"); 
-			}
-
-	}
-txtFile.send(null)
-
+   
