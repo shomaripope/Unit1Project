@@ -11,6 +11,7 @@ background-image: url("3D-Futuristic-Room-Wallpaper.jpg")
 }
 #stats {
   text-align: center;
+  padding-top: 20px;
 }
 
 .leftMain {
@@ -20,6 +21,7 @@ justify-content: flex-start;
 background:#41B7FE;
 flex-wrap: wrap;
 justify-content: space-around;
+background-image: radial-gradient(#552780, #41B7FE 70%);
 
 }
 
@@ -29,10 +31,14 @@ p {
 
 #keys {
   text-align: center;
+  
 }
 
 li{
-  border: 1px solid black;
+  height: 50px;
+  width: 50px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 
@@ -43,7 +49,7 @@ li{
     background: #41B7FE;
     display: flex;
     justify-content: center;
-    border: 1px solid black;
+    background-image: radial-gradient(#552780, #41B7FE 70%);
   }
   
   .navigation a {
@@ -83,7 +89,18 @@ li{
     }
   }
 
+button {
+  height: 50px;
+  width: 50px;
+  border-radius: 20px;
+  border: solid white;
+  background-color: black;
+  color: #41B7FE;
+  font-size: 2em;
+  text-align: center;
+  
 
+}
 
 /* @mixin flexbox() {
     display: -webkit-box;

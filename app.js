@@ -41,17 +41,17 @@ let splitWord = [];
 let Word = "dynamic";
 let convertedWord = Word.toUpperCase();
 for (let i = 0; i < convertedWord.length; i++){
-    splitWord.push(convertedWord.charAt(i++));
-    //console.log(guessWord.charAt(i));
+    splitWord.push(convertedWord[i]);
+    console.log(convertedWord);
 
     //logic for determining correct letter choice within array
     console.log(splitWord)
     for (i=0; i < splitWord.length; i++){
         $("#a").on("click", function(){
-        if($("#a") !== splitWord[i++]){
-            console.log("guess again, time's running out!!");
+        if(document.getElementById("#a") == splitWord[i]){
+           console.log("great guess! Keep it up, you're saving yourself!") 
         } else {
-            console.log("great guess! Keep it up, you're saving yourself!")
+            console.log("guess again, time's running out!!");
             console.log(splitWord[i]);
             }
         })
@@ -59,10 +59,10 @@ for (let i = 0; i < convertedWord.length; i++){
 
     for (i=0; i < splitWord.length; i++){
         $("#b").on("click", function(){
-        if($("#b") !== splitWord[i++]){
-            console.log("guess again, time's running out!!");
+        if(document.getElementById("#b") == splitWord[i]){
+           console.log("great guess! Keep it up, you're saving yourself!") 
         } else {
-            console.log("great guess! Keep it up, you're saving yourself!")
+            console.log("guess again, time's running out!!");
             console.log(splitWord[i]);
             }
         })
