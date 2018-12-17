@@ -19,7 +19,7 @@ let readfile = function () {
 };
 
    
-   $(document).on("load", $("#keys").hide(),$("#playerImage").hide());
+   $(document).on("load", $("#keys").hide(),$("#game_logo").show());
    $("#game").on("click", function(){
        $("#keys").show();
        $("#playerImage").show();
@@ -37,33 +37,34 @@ let readfile = function () {
    }
 
    //split guessword into array for equality logic
+//  let alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 let splitWord = [];
 let Word = "dynamic";
 let convertedWord = Word.toUpperCase();
 for (let i = 0; i < convertedWord.length; i++){
     splitWord.push(convertedWord[i]);
-    console.log(convertedWord);
+    //console.log(convertedWord);
 
     //logic for determining correct letter choice within array
     console.log(splitWord)
-    for (i=0; i < splitWord.length; i++){
+    for (let j=0; j < splitWord.length; j++){
         $("#a").on("click", function(){
-        if(document.getElementById("#a") == splitWord[i]){
+        if(document.getElementById("#a") == splitWord[j].value){
            console.log("great guess! Keep it up, you're saving yourself!") 
         } else {
             console.log("guess again, time's running out!!");
-            console.log(splitWord[i]);
+            console.log(splitWord[j]);
             }
         })
     }
 
-    for (i=0; i < splitWord.length; i++){
+    for (let k=0; k < splitWord.length; k++){
         $("#b").on("click", function(){
-        if(document.getElementById("#b") == splitWord[i]){
+        if(document.getElementById("#b") == splitWord[k]){
            console.log("great guess! Keep it up, you're saving yourself!") 
         } else {
             console.log("guess again, time's running out!!");
-            console.log(splitWord[i]);
+            console.log(splitWord[k]);
             }
         })
     }
