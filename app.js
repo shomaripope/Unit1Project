@@ -35,12 +35,45 @@ let readfile = function () {
            }
        }); 
    }
-splitWord = [];
-guessWord = "dynamic";
-for ( let i = 0; i < guessWord.length; i ++){
-    splitWord.push(guessWord.charAt(i));
-    console.log(guessWord.charAt(i));
+
+   //split guessword into array for equality logic
+let splitWord = [];
+let Word = "dynamic";
+let convertedWord = Word.toUpperCase();
+for (let i = 0; i < convertedWord.length; i++){
+    splitWord.push(convertedWord.charAt(i++));
+    //console.log(guessWord.charAt(i));
+
+    //logic for determining correct letter choice within array
     console.log(splitWord)
+    for (i=0; i < splitWord.length; i++){
+        $("#a").on("click", function(){
+        if($("#a") !== splitWord[i++]){
+            console.log("guess again, time's running out!!");
+        } else {
+            console.log("great guess! Keep it up, you're saving yourself!")
+            console.log(splitWord[i]);
+            }
+        })
+    }
+
+    for (i=0; i < splitWord.length; i++){
+        $("#b").on("click", function(){
+        if($("#b") !== splitWord[i++]){
+            console.log("guess again, time's running out!!");
+        } else {
+            console.log("great guess! Keep it up, you're saving yourself!")
+            console.log(splitWord[i]);
+            }
+        })
+    }
 }
 
+//$(".letterChoice").on("click", function(){
+ //   if($(".letterChoice"). == $("#"))
+//})
 
+//logic for guessing correct letter in array
+
+
+//or (i < )
