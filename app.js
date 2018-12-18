@@ -18,7 +18,7 @@
 //     };
 // };
 
-   let timer = 240000;
+   let timer = 120000;
    $(document).on("load", $("#keys").hide(),$("#game_logo").show());
    $(document).on("load", $("#playerImage").hide(), $(".gameHeader").hide());
    $("#game").on("click", function(){
