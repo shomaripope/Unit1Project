@@ -37,23 +37,28 @@ let array = convertedWord.split("")
 console.log(array)
  let alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
 
-document.getElementById("a").innerText = alphabet[0];
-document.getElementById("b").innerText = alphabet[1];
+document.getElementById("a").value = alphabet[0];
+document.getElementById("b").value = alphabet[1];
+document.getElementById("c").textContent = alphabet[2];
 
 console.log(array[3])
-console.log(document.getElementById("a").value)
- if (array[4] === document.getElementById("a").value){
+//console.log(document.getElementById("a").value)
+ if (array[3] == document.getElementById("a").value){
      console.log("values match!")
-     alert("Correct! Keep Going!")
+     //alert("Correct! Keep Going!")
  } else {
      console.log("not a match try again")
-     alert("not a match, keep trying!")
+     //alert("not a match, keep trying!")
  }
 
   
    //split guessword into array for equality logic
 
+$(".letterChoice").on("click", function(){
+    console.log($(".letterChoice").value)
 
+    
+})
 
 
 
