@@ -32,7 +32,7 @@ let readfile = function () {
    })
 let Word = "dynamic";
 let convertedWord = Word.toUpperCase();
-let splitWord = [];
+let screenWord = ["_","_","_","_","_","_","_"];
 let array = convertedWord.split("")
 console.log(array)
    //split guessword into array for equality logic
@@ -42,6 +42,10 @@ $(".letterChoice").on("click", function(){
 
     if (array.includes(this.value) == true){
      console.log("values match!")
+     console.log(array.indexOf(this.value))
+     screenWord[array.indexOf(this.value)] = this.value;
+     console.log(screenWord)
+    $("#screenWord").text(screenWord)
      //alert("Correct! Keep Going!")
  } else {
      console.log("not a match try again")
