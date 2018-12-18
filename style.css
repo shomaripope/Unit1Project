@@ -1,13 +1,22 @@
 header {
 text-align: center;
+color: rgb(241, 56, 56);
+font-size: 35px;
+font-weight: bold;
 }
 
+h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 60px;
+}
 body {
 display: grid;
 justify-content: space-around;
 align-items: stretch;
 background-image: url("3D-Futuristic-Room-Wallpaper.jpg")
 /*background-image: url("436696-PEGWZV-99.jpg")*/
+
 }
 #stats {
   text-align: center;
@@ -15,6 +24,7 @@ background-image: url("3D-Futuristic-Room-Wallpaper.jpg")
 }
 
 .leftMain {
+  color: white;
 display: flex;
 flex-direction: column;
 justify-content: flex-start;
@@ -27,6 +37,8 @@ background-image: radial-gradient(#552780, #41B7FE 70%);
 
 p {
   color: white;
+  text-align: center;
+  font-size: 25px;
 }
 
 #keys {
@@ -90,16 +102,14 @@ li{
   }
 
 button {
-  height: 50px;
-  width: 50px;
+  height: 60px;
+  width: 60px;
   border-radius: 20px;
   border: solid white;
   background-color: black;
   color: #41B7FE;
-  font-size: 2em;
+  font-size: 40px;
   text-align: center;
-  
-
 }
 
 /* @mixin flexbox() {

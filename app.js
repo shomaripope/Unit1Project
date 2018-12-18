@@ -20,54 +20,166 @@ let readfile = function () {
 
    
    $(document).on("load", $("#keys").hide(),$("#game_logo").show());
+   $(document).on("load", $("#playerImage").hide(), $(".gameHeader").hide());
    $("#game").on("click", function(){
+       $("#game_logo").hide()
+       $(".gameHeader").show()
        $("#keys").show();
        $("#playerImage").show();
-       $("#playerImage").fadeOut(120000);
+       $("#playerImage").fadeOut(120000, function(){
+           alert("You Lose!!");
+       });
    })
-
-   var file = "/Users/shomaripope/projects/unit1Project/usa.txt";
-   function getFile(){
-       $.get(file,function(txt){
-           var lines = txt.responseText.split("\n");
-           for (var i = 0, len = lines.length; i < len; i++) {
-               save(lines[i]);
-           }
-       }); 
-   }
-
-   //split guessword into array for equality logic
-//  let alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
-let splitWord = [];
 let Word = "dynamic";
 let convertedWord = Word.toUpperCase();
-for (let i = 0; i < convertedWord.length; i++){
-    splitWord.push(convertedWord[i]);
-    //console.log(convertedWord);
+let splitWord = [];
+let array = convertedWord.split("")
+console.log(array)
+ let alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+
+document.getElementById("a").innerText = alphabet[0];
+document.getElementById("b").innerText = alphabet[1];
+
+console.log(array[3])
+console.log(document.getElementById("a").value)
+ if (array[4] === document.getElementById("a").value){
+     console.log("values match!")
+     alert("Correct! Keep Going!")
+ } else {
+     console.log("not a match try again")
+     alert("not a match, keep trying!")
+ }
+
+  
+   //split guessword into array for equality logic
+
+
+
+
+
+
+
+let letters = document.getElementsByClassName("letterChoice").value;
+console.log(letters)
+
+for (let i = 0; i < splitWord.length; i++){
+    splitWord.push(Word[i]);
+//    console.log(splitWord);
+    
+//    console.log(splitWord)
+//    let wordValue = $(".letterChoice").val()
 
     //logic for determining correct letter choice within array
-    console.log(splitWord)
-    for (let j=0; j < splitWord.length; j++){
+    // console.log(splitWord)
+    for (let i=0; i < array.length; i++){
         $("#a").on("click", function(){
-        if(document.getElementById("#a") == splitWord[j].value){
-           console.log("great guess! Keep it up, you're saving yourself!") 
-        } else {
-            console.log("guess again, time's running out!!");
-            console.log(splitWord[j]);
-            }
+            console.log(array)
+            
+        // if($("#a").val() == array){
+        //    console.log("great guess! Keep it up, you're saving yourself!") 
+           
+        // }
+        //    else if ($("#b") == array){
+        //     console.log("great guess! Keep it up, you're saving yourself!") 
+        //    }
+        //    else if ($("#c") == array){
+        //     console.log("great guess! Keep it up, you're saving yourself!") 
+        //    }
+        //    else if ($("#d") == array[j]){
+        //     console.log("great guess! Keep it up, you're saving yourself!") 
+        //    }
+        //    else if ($("#e") == array[j]){
+        //     console.log("great guess! Keep it up, you're saving yourself!") 
+        //    }
+        //    else if ($("#f") == array[j]){
+        //     console.log("great guess! Keep it up, you're saving yourself!") 
+        //    }
+        //    else if ($("#g") == array[j]){
+        //     console.log("great guess! Keep it up, you're saving yourself!") 
+        //    }
+        //    else if ($("#h") == array[j]){
+        //     console.log("great guess! Keep it up, you're saving yourself!") 
+        //    }
+        //    else if ($("#i") == array[j]){
+        //     console.log("great guess! Keep it up, you're saving yourself!") 
+        //    }
+        //    else if ($("#j") == array[j]){
+        //     console.log("great guess! Keep it up, you're saving yourself!") 
+        //    }
+        //    else if ($("#k") == array[j]){
+        //     console.log("great guess! Keep it up, you're saving yourself!") 
+        //    }
+        //    else if ($("#l") == array[j]){
+        //     console.log("great guess! Keep it up, you're saving yourself!") 
+        //    }
+        //    else if ($("#m") == array[j]){
+        //     console.log("great guess! Keep it up, you're saving yourself!") 
+        //    }
+        //    else if ($("#n") == array[j]){
+        //     console.log("great guess! Keep it up, you're saving yourself!") 
+        //    }
+        //    else if ($("#o") == array[j]){
+        //     console.log("great guess! Keep it up, you're saving yourself!") 
+        //    }
+        //    else if ($("#p") == array[j]){
+        //     console.log("great guess! Keep it up, you're saving yourself!") 
+        //    }
+        //    else if ($("#q") == array[j]){
+        //     console.log("great guess! Keep it up, you're saving yourself!") 
+        //    }
+        //    else if ($("#r") == array[j]){
+        //     console.log("great guess! Keep it up, you're saving yourself!") 
+        //    }
+        //    else if ($("#s") == array[j]){
+        //     console.log("great guess! Keep it up, you're saving yourself!") 
+        //    }
+        //    else if ($("#t") == array[j]){
+        //     console.log("great guess! Keep it up, you're saving yourself!") 
+        //    }
+        //    else if ($("#u") == array[j]){
+        //     console.log("great guess! Keep it up, you're saving yourself!") 
+        //    }
+        //    else if ($("#v") == array[j]){
+        //     console.log("great guess! Keep it up, you're saving yourself!") 
+        //    }
+        //    else if ($("#w") == array[j]){
+        //     console.log("great guess! Keep it up, you're saving yourself!") 
+        //    }
+        //    else if ($("#x") == array[j]){
+        //     console.log("great guess! Keep it up, you're saving yourself!") 
+        //    }
+        //    else if ($("#y") == array[j]){
+        //     console.log("great guess! Keep it up, you're saving yourself!") 
+            
+        //    }
+        //    else if ($("#z") == array[j]){
+        //     console.log("great guess! Keep it up, you're saving yourself!") 
+        //    }
+        // else {
+        //     console.log("guess again, time's running out!!");
+            
+        //     }
         })
+        
     }
 
-    for (let k=0; k < splitWord.length; k++){
-        $("#b").on("click", function(){
-        if(document.getElementById("#b") == splitWord[k]){
-           console.log("great guess! Keep it up, you're saving yourself!") 
-        } else {
-            console.log("guess again, time's running out!!");
-            console.log(splitWord[k]);
-            }
-        })
-    }
+    
+
+    // for( let i =0; i< array.length; i++){
+        // console.log(array)
+    // }
+
+
+    // for (let k=0; k < splitWord.length; k++){
+    //     $("#b").on("click", function(){
+    //     if(document.getElementById("#b") == splitWord[k]){
+    //        console.log("great guess! Keep it up, you're saving yourself!") 
+    //     } else {
+    //         console.log("guess again, time's running out!!");
+    //         //console.log(splitWord[k]);
+    //         }
+    //     })
+    // }
 }
 
 //$(".letterChoice").on("click", function(){
@@ -78,3 +190,9 @@ for (let i = 0; i < convertedWord.length; i++){
 
 
 //or (i < )
+keys = document.getElementsByClassName("letterChoice")
+keys.value
+//const matchLetter = function(){
+
+//};
+//console.log(keys)
