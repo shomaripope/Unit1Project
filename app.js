@@ -26,34 +26,43 @@ let readfile = function () {
        $(".gameHeader").show()
        $("#keys").show();
        $("#playerImage").show();
-       $("#playerImage").fadeOut(120000, function(){
-           alert("You Lose!!");
+       $("#playerImage").fadeOut(240000, function(){
+        
        });
    })
-let Word = "dynamic";
+let Word = "shomari";
 let convertedWord = Word.toUpperCase();
 let screenWord = ["_","_","_","_","_","_","_"];
+let win = ["_","_","_","_","_","_","_"];
 let array = convertedWord.split("")
 console.log(array)
    //split guessword into array for equality logic
 
 $(".letterChoice").on("click", function(){
-    for(let i = 0; i < array.length; i++){
+    // for(let i = 0; i < array.length; i++){
 
     if (array.includes(this.value) == true){
      console.log("values match!")
      console.log(array.indexOf(this.value))
      screenWord[array.indexOf(this.value)] = this.value;
      console.log(screenWord)
-    $("#screenWord").text(screenWord)
+     array[array.indexOf(this.value)] = "_";
+    $("#screenWord").text(screenWord);
+    console.log(screenWord.toString())
+    if( screenWord.toString()  == "S,H,O,M,A,R,I"){
+        console.log("you win");
+        alert("YOU WIN!! NARUTO LIVES!!!")
+        $("#playerImage").fadeOut(stop());
+    }
      //alert("Correct! Keep Going!")
  } else {
-     console.log("not a match try again")
+     console.log("not a match try again");
      //alert("not a match, keep trying!")
  }
-}
+// }
     console.log(this.value)
     console.log(array)
+    
 })
 
 
