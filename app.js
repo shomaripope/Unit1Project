@@ -1,24 +1,24 @@
 //read text file
-let readfile = function () {
-    document.getElementById('file').onchange = function () {
-        debugger;
-        var file = this.files[0];
-        var reader = new FileReader();
-        reader.onload = function (progressEvent) {
-            // Entire file
-            console.log(this.result);
-            // By lines
-            var lines = this.result.split('\n');
-            var list = [];
-            for (var line = 0; line < lines.length; line++) {
-                list.push(lines[line]);
-            }
-        };
-        reader.readAsText(usa.txt);
-    };
-};
+// let readfile = function () {
+//     document.getElementById('file').onchange = function () {
+//         debugger;
+//         var file = this.files[0];
+//         var reader = new FileReader();
+//         reader.onload = function (progressEvent) {
+//             // Entire file
+//             console.log(this.result);
+//             // By lines
+//             var lines = this.result.split('\n');
+//             var list = [];
+//             for (var line = 0; line < lines.length; line++) {
+//                 list.push(lines[line]);
+//             }
+//         };
+//         reader.readAsText(usa.txt);
+//     };
+// };
 
-   
+   let timer = 240000;
    $(document).on("load", $("#keys").hide(),$("#game_logo").show());
    $(document).on("load", $("#playerImage").hide(), $(".gameHeader").hide());
    $("#game").on("click", function(){
@@ -26,10 +26,11 @@ let readfile = function () {
        $(".gameHeader").show()
        $("#keys").show();
        $("#playerImage").show();
-       $("#playerImage").fadeOut(240000, function(){
+       $("#playerImage").fadeOut(timer, function(){
         
        });
    })
+   
 let Word = "shomari";
 let convertedWord = Word.toUpperCase();
 let screenWord = ["_","_","_","_","_","_","_"];
@@ -46,17 +47,20 @@ $(".letterChoice").on("click", function(){
      console.log(array.indexOf(this.value))
      screenWord[array.indexOf(this.value)] = this.value;
      console.log(screenWord)
+     document.getElementById("playerImage").style.opacity++
      array[array.indexOf(this.value)] = "_";
     $("#screenWord").text(screenWord);
     console.log(screenWord.toString())
     if( screenWord.toString()  == "S,H,O,M,A,R,I"){
         console.log("you win");
         alert("YOU WIN!! NARUTO LIVES!!!")
-        $("#playerImage").fadeOut(stop());
+        //$("#playerImage").show();
+      $("#playerImage").stop();
     }
      //alert("Correct! Keep Going!")
  } else {
      console.log("not a match try again");
+    document.getElementById("playerImage").style.opacity--
      //alert("not a match, keep trying!")
  }
 // }
