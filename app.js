@@ -40,8 +40,6 @@ console.log(array)
    //split guessword into array for equality logic
 
 $(".letterChoice").on("click", function(){
-    // for(let i = 0; i < array.length; i++){
-
     if (array.includes(this.value) == true){
      console.log("values match!")
      console.log(array.indexOf(this.value))
@@ -54,7 +52,6 @@ $(".letterChoice").on("click", function(){
     if( screenWord.toString()  == "S,H,O,M,A,R,I"){
         console.log("you win");
         alert("YOU WIN!! NARUTO LIVES!!!")
-        //$("#playerImage").show();
       $("#playerImage").stop();
     }
      //alert("Correct! Keep Going!")
