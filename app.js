@@ -35,40 +35,30 @@ let convertedWord = Word.toUpperCase();
 let splitWord = [];
 let array = convertedWord.split("")
 console.log(array)
- let alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+   //split guessword into array for equality logic
 
-document.getElementById("a").value = alphabet[0];
-document.getElementById("b").value = alphabet[1];
-document.getElementById("c").textContent = alphabet[2];
+$(".letterChoice").on("click", function(){
+    for(let i = 0; i < array.length; i++){
 
-console.log(array[3])
-//console.log(document.getElementById("a").value)
- if (array[3] == document.getElementById("a").value){
+    if (array.includes(this.value) == true){
      console.log("values match!")
      //alert("Correct! Keep Going!")
  } else {
      console.log("not a match try again")
      //alert("not a match, keep trying!")
  }
-
-  
-   //split guessword into array for equality logic
-
-$(".letterChoice").on("click", function(){
-    console.log($(".letterChoice").value)
-
-    
+}
+    console.log(this.value)
+    console.log(array)
 })
 
 
 
+// let letters = document.getElementsByClassName("letterChoice").value;
+// console.log(letters)
 
-
-let letters = document.getElementsByClassName("letterChoice").value;
-console.log(letters)
-
-for (let i = 0; i < splitWord.length; i++){
-    splitWord.push(Word[i]);
+// for (let i = 0; i < splitWord.length; i++){
+//     splitWord.push(Word[i]);
 //    console.log(splitWord);
     
 //    console.log(splitWord)
@@ -76,9 +66,9 @@ for (let i = 0; i < splitWord.length; i++){
 
     //logic for determining correct letter choice within array
     // console.log(splitWord)
-    for (let i=0; i < array.length; i++){
-        $("#a").on("click", function(){
-            console.log(array)
+    // for (let i=0; i < array.length; i++){
+    //     $("#a").on("click", function(){
+    //         console.log(array)
             
         // if($("#a").val() == array){
         //    console.log("great guess! Keep it up, you're saving yourself!") 
@@ -164,9 +154,9 @@ for (let i = 0; i < splitWord.length; i++){
         //     console.log("guess again, time's running out!!");
             
         //     }
-        })
+       // })
         
-    }
+    //}
 
     
 
@@ -185,19 +175,4 @@ for (let i = 0; i < splitWord.length; i++){
     //         }
     //     })
     // }
-}
-
-//$(".letterChoice").on("click", function(){
- //   if($(".letterChoice"). == $("#"))
-//})
-
-//logic for guessing correct letter in array
-
-
-//or (i < )
-keys = document.getElementsByClassName("letterChoice")
-keys.value
-//const matchLetter = function(){
-
-//};
-//console.log(keys)
+//}
